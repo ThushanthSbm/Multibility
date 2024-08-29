@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 
+// User CRUD routes
+Route::resource('users', UserController::class)->middleware('auth');
 Route::get('/', function () {
     return view('welcome');
 });
